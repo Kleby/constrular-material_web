@@ -1,0 +1,72 @@
+.draw__container{
+    width: 100%;
+    /* height: 130px; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.draw__content{
+    content: "";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+    height: 104px;
+    background-color: #fff;
+    border: 2px solid #000;
+    top: 0;
+    position: relative;
+}
+
+#drawElements{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.draw-span{
+    color: var(--secondary);
+    position: absolute;
+    font-size: 1.25rem;
+}
+
+.draw-height{
+    top: -24px;
+}
+
+.draw-width{
+    left: -42px;
+}
+
+.line, .line::before{
+    content: "";
+    background-color: #540074;
+}
+
+.line{
+    display: flex;
+    justify-content: center;
+    width: 4px;
+    bottom: 0;
+    position: relative;
+}
+
+.line::before{
+    position: absolute;
+    width: 10px;
+    height: 2px;
+}
+
+.description-size{
+    color: #000;
+    font-size: 12px;
+    position: absolute;
+    right: -32px;
+}

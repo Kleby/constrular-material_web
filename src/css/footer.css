@@ -1,0 +1,17 @@
+.footer__container{
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.footer__title{
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.footer-brand{
+    color: var(--primary);
+}

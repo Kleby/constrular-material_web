@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo para Lages</title>
+
+    <link rel="stylesheet" href="../src/css/form.css">
+    <link rel="stylesheet" href="../src/css/modal.css">
+    <link rel="stylesheet" href="../src/css/reset.css">
+    <link rel="stylesheet" href="../src/css/header.css">
+    <link rel="stylesheet" href="../src/css/footer.css">
+    <link rel="stylesheet" href="../src/css/main.css">
+    <link rel="stylesheet" href="../src/css/draw.css">
+</head>
+
+<body>
+    <header class="header__container">
+        <nav class="navbar">
+            <a href="../index.html" class="link-homer">Voltar</a>
+        </nav>
+    </header>
+    <main class="main__container">
+        <h1 class="main__title">
+            Preencha os campos
+        </h1>
+
+        <form action="#" method="POST" class="calc__form" id="lageForm">
+            <div class="calc__content">
+                <div class="area-abreviada" id="areaAbreviada">
+                    <div class="form-group">
+                        <label for="inAbreviada" class="form-lbl">*Largura X Comprimento</label>
+                        <input type="text" id="inAbreviada" name="area-abreviada" placeholder="LxC" class="form-in">
+                        <small class="danger">*Campo Obrigatório</small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <h2 class="block__title">Tipo de bloco</h2>
+                <div class="block__container">
+                    <div class="block__content" id="blockChange">
+                        <div class="select-block">
+                            <input type="radio" name="bloco" checked id="blocoCeramica" value="Cerâmica" class="type-radio">
+                            <label for="blocoCeramica" class="type-lbl">Cerâmica</label>
+                        </div>
+                        <div class="select-block">
+                            <input type="radio" name="bloco" id="blocoIsopor" value="Isopor" class="type-radio">
+                            <label for="blocoIsopor" class="type-lbl">Isopor</label>
+                        </div>
+                    </div>
+                    <small hidden class="danger" id="blockError">Selecione um tipo de bloco</small>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-calc" id="btnCalc">Calcular</button>
+        </form>
+    </main>
+    <section class="modal-result" id="modalResult">
+        <div class="modal__content">
+
+            <button class="btn btn-close" id="closeModal">X</button>
+            <div class="modal-item">
+                <p>Nevrura Treliçada total:</p> 
+                <span class="item-value">
+                    <span id="nevruraModal"></span> Unidades</span>
+            </div>
+            <div class="modal-item">
+                <p>Bloco:</p> 
+                <span class="item-value"><span id="unidadeBlocoModal"></span> unidades de blocos <span id="blocoModal">
+                    </span>
+                </span>
+            </div>
+            <div class="modal-item">
+                <p>Malha:</p> 
+                <span class="item-value"><span id="malhaModal" class="item-value"></span> unidades de malha</span>
+            </div>
+            <div class="modal-item" id="britaModal">
+                <p>Brita: </p><span class="item-value"><span id="latasBritaModal"
+                        class="item-value"></span> latas <span id="qtdBrita"></span>
+                </span>
+            </div>
+            <div class="modal-item">
+                <p>Cimento:</p> <span class="item-value">
+                    <span id="cimentoModal" class="item-value"></span> sacos
+                </span>
+            </div>
+        </div>
+        <div class="modal__description__container" >
+            <h4 class="modal__description-title">Nevruras</h4>
+            <div class="modal__description">
+                <p>Quantidade</p>
+                <i class="separete"></i>
+                <p>Tamanho</p>
+            </div>
+            <div id="modalDescription" class="modal__description_content">
+            </div>
+            <div class="draw__container">
+                <div class="draw__content" id="drawContent">
+                    <span class="draw-height draw-span" id="drawHeight"></span>
+                    <span class="draw-width draw-span" id="drawWidth"></span>
+                    <div id="drawElements">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer__container">
+        <p class="footer__description">
+            <span id="anoAtual"></span> &copy;
+        </p>
+        <p class="footer__title">
+            Constrular  <span class="footer-brand">Home Center</span>
+        </p>
+    </footer>
+    <script defer src="../src/js/calcularLaje.js"></script>
+    <script defer src="../src/js/validacao.js"></script>
+    <script defer src="../src/js/calculaNevrura.js"></script>
+    <script defer src="../src/js/enabledDisabled.js"></script>
+</body>
+
+</html>

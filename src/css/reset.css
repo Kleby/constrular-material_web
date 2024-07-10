@@ -1,0 +1,75 @@
+
+:root{
+    --primary: #0D6B5B;
+    --primary-001:#0D4B4af6;
+    --primary-010: #096309;
+    --primary-100: #0D6B5B66;
+
+    --secondary: #FF6B08;
+    --secondary-001: #c65001;
+    --secondary-010: #ec8642;
+    --secondary-100: #FF7B0988;
+
+    --tertiary: #FFF;
+    --tertiary-100: #d9d9da;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    border: none;
+    outline: none;
+}
+
+input{
+    border: none;
+    outline: none;
+}
+
+.btn{
+    cursor: pointer;
+}
+
+
+.ativated{
+    display: flex !important;
+}
+
+.disabled{
+    display: none !important;
+}
+
+.danger{
+    color: rgb(248, 248, 86);
+    font-weight: 600;
+    visibility: hidden;
+}
+.danger.enabled{
+    visibility: visible;
+}
+
+.btn.btn-disabled{
+    background-color: #555555;
+    filter: opacity(.9);
+    cursor: none;
+    pointer-events: none;
+}
