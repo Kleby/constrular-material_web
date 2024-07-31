@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nevrura = largura < comprimento ? comprimento * 2.5 : largura * 2.5;
     const unidadeBloco = bloco === "Isopor" ? area * 2 : area * 11.5;
     const malha = area / 6;
-    const latasBrita = area / 1.25;
+    const latasBrita = area * 1.25;
     const cimento = Math.ceil(area / 3);
     
     const nevruraModal = document.getElementById("nevruraModal");
