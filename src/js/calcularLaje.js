@@ -39,7 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const unidadeBloco = bloco === "Isopor" ? area * 2 : area * 11.5;
     const malha = area / 6;
     const latasBrita = area * 1.25;
-    const cimento = Math.ceil(area / 3);
+    const cimento = Math.ceil(area / 2.5);
+
+    console.log("Latas de britas: ", latasBrita);
+    console.log("area: ", area);
+    
     
     const nevruraModal = document.getElementById("nevruraModal");
     const unidadeBlocoModal = document.getElementById("unidadeBlocoModal");
