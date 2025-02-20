@@ -15,6 +15,33 @@ document.addEventListener("DOMContentLoaded", () => {
     comprimento = replaceDot(value[1]);
     area = largura * comprimento;
 
+<<<<<<< HEAD
+=======
+    const tiposBloco = document.getElementsByName("bloco");
+    const blockError = document.getElementById("blockError");
+  
+    
+    let bloco = "";
+    tiposBloco.forEach((blocoEscolhido) => {
+      if (blocoEscolhido.checked) bloco = blocoEscolhido.value;
+    });
+    
+    if (!bloco) {
+      blockError.style.display = "block";
+      return;
+    }
+    
+    const nevrura = largura < comprimento ? comprimento * 2.5 : largura * 2.5;
+    const unidadeBloco = bloco === "Isopor" ? area * 2 : area * 11.5;
+    const malha = area / 6;
+    const latasBrita = area * 1.25;
+    const cimento = Math.ceil(area / 2.5);
+
+    console.log("Latas de britas: ", latasBrita);
+    console.log("area: ", area);
+    
+    
+>>>>>>> f78ad5a8089d894a6d2fe407ae5ef2d2f7d5bcd7
     const nevruraModal = document.getElementById("nevruraModal");
     const unidadeCeramicaBlocoModal = document.getElementById("unidadeCeramicaBlocoModal");
     const unidadeIsoporBlocoModal = document.getElementById("unidadeIsoporBlocoModal");
