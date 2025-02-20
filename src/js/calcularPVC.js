@@ -73,5 +73,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
         fichasIdeais.forEach(ficha => {
             fichasRecomendadas.innerHTML += `<li>${ficha.tamanho}: ${ficha.quantidade} unidades</li>`;
         });
+
+        areaComodo.value = "";
+
     });
 });
