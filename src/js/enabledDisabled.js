@@ -1,10 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document
-    .getElementById("blockChange")
-    .addEventListener("change", () => (blockError.style.display = "none"));
-  document
-    .querySelector(".block__container")
-    .removeEventListener("change", () => {});
+  let areaComodo = document.getElementById("areaComodo");
 
   function addClassActivated(idSelecionado) {
     idSelecionado.classList.add("ativated");
@@ -18,11 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const modalResult = document.getElementById("modalResult");
   const closeModal = document.getElementById("closeModal");
+  console.log('aqui modal');
+  
   
   closeModal.addEventListener("click", () => {
     AddClassDisabled(modalResult);
     limparDados();
-    inAbreviada.focus()
+    areaComodo.focus()
   });
   closeModal.removeEventListener("click", () => AddClassDisabled(modalResult));
   
@@ -30,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") {
       limparDados();
       AddClassDisabled(modalResult);
-      inAbreviada.focus()
+      areaComodo.focus()
     }
   });
   document.removeEventListener("keydown", () => {});
@@ -38,12 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnCalc = document.getElementById("btnCalc");
   btnCalc.addEventListener("click", () => {
     addClassActivated(modalResult);
-    inAbreviada.blur()
+    areaComodo.blur()
   });
   btnCalc.removeEventListener("click", () => addClassActivated(modalResult));
 
   function limparDados() {
-    inAbreviada.value = "";
+    areaComodo.value = "";
   }
 });
 document.removeEventListener("DOMContentLoaded", () => {});

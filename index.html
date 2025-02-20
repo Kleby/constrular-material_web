@@ -3,29 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./Constrular_brand.ico" type="image/x-icon">
     <title>Calculadora de Materiais</title>
+    <link rel="shortcut icon" href="/favicon-constrular.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/css/header.css">
     <link rel="stylesheet" href="./src/css/main.css">
     <link rel="stylesheet" href="./src/css/footer.css">
+    <!-- <link rel="stylesheet" href="./src/css/draw.css"> -->
+    <link rel="stylesheet" href="./src/css/navbar.css">
 </head>
 <body>
     <header class="header__container">
         <div class="header__brand">
-            <img src="./src/images/Constrular_brand.png" alt="Logo da Constrular" class="brand">
+            <img src="/src/images/Constrular_brand.png" alt="Logo da Constrular" class="brand">
         </div>
     </header>
     <main class="main__container">
         <h1 class="main__title">
             Calculador de materiais
         </h1>
+        <p class="main__description">
+            A Constrular Home Center oferece diversos produtos de construção para diferentes tamanhos e
+            espaços. Utilize o nosso calculador para saber a quantidade de cada material.
+        </p>
 
-        <a href="./routers/lage.html" target="_top" class="item-link">
-            <h2 class="item__title">Lages</h2>
-            <img src="./src/images/lage.png" alt="icone de uma lage" class="item-icon">
-        </a>
+        <nav class="nav-bar">
+            <div class="nav-bar__content">
+
+                <a href="./routers/cimento.html" target="_top" class="item-link">Cimento</a>
+                <a href="./routers/tijolo.html" target="_top" class="item-link">Tijolo</a>
+                <a href="./routers/areia.html" target="_top" class="item-link">Areia</a>
+                <a href="./routers/pedra.html" target="_top" class="item-link">Pedra</a>
+                <a href="./routers/telha.html" target="_top" class="item-link">Telha</a>
+                <a href="./routers/tinta.html" target="_top" class="item-link">Tinta</a>
+                
+                <a href="./routers/lage.html" target="_top" class="item-link">
+                    <h3 class="item__title">Lages</h3>
+                    <img src="./src/images/lage.png" alt="icone de uma lage" class="item-icon">
+                </a>
+                
+                <a href="./routers/pvc.html" target="_top" class="item-link">
+                    <h3 class="item__title">Forro PVC</h3>
+                    <img src="./src/images/pvc.png" alt="icone de uma lage" class="item-icon">
+                </a>
+            </div>
+        </nav>
+
     </main>
     <footer class="footer__container">
         <p class="footer__description">

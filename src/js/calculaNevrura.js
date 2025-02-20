@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     listNevruras.push(i.toFixed(2));
   }
 
-  lageForm.addEventListener("submit", function (e) {
+  calcForm.addEventListener("submit", function (e) {
     e.preventDefault();
     
     document.getElementById("drawElements").innerHTML = "";
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("drawWidth").innerText = largura === ladoMenor? largura+"m" : comprimento+"m";
   });
 
-  lageForm.removeEventListener("submit", ()=>{})
+  calcForm.removeEventListener("submit", ()=>{})
 });
 
 document.removeEventListener("DOMContentLoaded", () => {});

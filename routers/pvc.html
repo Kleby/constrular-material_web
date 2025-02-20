@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo para PVC</title>
+
+    <link rel="stylesheet" href="../src/css/form.css">
+    <link rel="stylesheet" href="../src/css/modal.css">
+    <link rel="stylesheet" href="../src/css/reset.css">
+    <link rel="stylesheet" href="../src/css/header.css">
+    <link rel="stylesheet" href="../src/css/footer.css">
+    <link rel="stylesheet" href="../src/css/main.css">
+    <link rel="stylesheet" href="../src/css/draw.css">
+    <link rel="stylesheet" href="../src/css/pvc.css">
+</head>
+</head>
+<body>
+    <header class="header__container">
+        <nav class="navbar">
+            <div class="header__brand">
+                <img src="../src/images/Constrular_brand.png" alt="Logo da Constrular" class="brand">
+            </div>
+            <a href="../index.html" class="link-homer">Voltar</a>
+        </nav>
+    </header>
+
+    <main class="main__container">
+        <h1 class="main__title">
+            Cáculo para forro PVC
+        </h1>
+
+        <form action="#" method="POST" class="calc__form" id="calcForm">
+
+            <!-- <div class="pvc-position__container">
+                <div class="pvc-position__select">
+
+                    <label for="pvcPosition" class="form-lbl">Posição do PVC</label>
+                    <select id="pvcPosition" name="posicao-pvc" class="form-select">
+                        <option value="vertical">Vertical</option>
+                        <option value="horizontal">Horizontal</option>
+                    </select>
+                    <small class="danger">*Campo Obrigatório</small>
+                </div>
+                <div class="pvc-image__content">
+                    <img src="../src/images/pvc.png" alt="Imagem do PVC horizontal" id="pvcImage" class="pvc-image">
+
+                </div>
+            </div> -->
+            <div class="calc__content">
+                <div class="area-PVC__Conteudo">
+                    <div class="form-group">
+                        <label for="areaComodo" class="form-lbl">*Largura X Comprimento</label>
+                        <input type="text" id="areaComodo" name="area-PVC" placeholder="LxC" class="form-in">
+                        <small class="danger">*Campo Obrigatório</small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <h2 class="block__title">Cliente Definiu o tamanho da ficha?</h2>
+                <div class="form-group">
+                    <label for="tamanhoFicha" class="form-lbl">Tamaho da ficha</label>
+                    <input type="text" name="tamanho-ficha" id="tamanhoFicha" placeholder="tamanho da ficha" class="form-in">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-calc" id="btnCalc">Calcular</button>
+        </form>
+    </main>
+    <section class="modal-result" id="modalResult">
+        <div class="modal__content">
+
+            <button class="btn btn-close" id="closeModal">X</button>
+            <div class="modal-item">
+                <div class="modal-item__column">
+                    <h3>Fichas Recomendadas</h3>
+                    <span class="item-value" id="fichasRecomendadas"></span>
+                </div>
+            </div>
+            <div class="modal-item">
+                <p>Arremates:</p> 
+                <span class="item-value" id="arremateModal3m">
+                    Unidades de 3m
+                </span>
+                OU
+                <span id="arremateModal6m">
+                    Unidades de 6m
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer class="footer__container">
+        <p class="footer__description">
+            <span id="anoAtual"></span> &copy;
+        </p>
+        <p class="footer__title">
+            Constrular  <span class="footer-brand">Home Center</span>
+        </p>
+    </footer>
+
+    <script defer src="../src/js/calcularPVC.js"></script>
+    <script defer src="../src/js/validacao.js"></script>
+    <script defer src="../src/js/enabledDisabled.js"> </script>
+    
+</body>
+</html>

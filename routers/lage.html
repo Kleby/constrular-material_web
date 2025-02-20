@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon-constrular.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
     <title>Cálculo para Lages</title>
 
     <link rel="stylesheet" href="../src/css/form.css">
@@ -18,6 +21,9 @@
 <body>
     <header class="header__container">
         <nav class="navbar">
+            <div class="header__brand">
+                <img src="../src/images/Constrular_brand.png" alt="Logo da Constrular" class="brand">
+            </div>
             <a href="../index.html" class="link-homer">Voltar</a>
         </nav>
     </header>
@@ -26,33 +32,18 @@
             Preencha os campos
         </h1>
 
-        <form action="#" method="POST" class="calc__form" id="lageForm">
+        <form action="#" method="POST" class="calc__form" id="calcForm">
             <div class="calc__content">
-                <div class="area-abreviada" id="areaAbreviada">
+                <div class="area-abreviada" id="areaLage">
                     <div class="form-group">
-                        <label for="inAbreviada" class="form-lbl">*Largura X Comprimento</label>
-                        <input type="text" id="inAbreviada" name="area-abreviada" placeholder="LxC" class="form-in">
+                        <label for="areaComodo" class="form-lbl">*Largura X Comprimento</label>
+                        <input type="text" id="areaComodo" name="area-lage" placeholder="LxC" class="form-in">
                         <small class="danger">*Campo Obrigatório</small>
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <h2 class="block__title">Tipo de bloco</h2>
-                <div class="block__container">
-                    <div class="block__content" id="blockChange">
-                        <div class="select-block">
-                            <input type="radio" name="bloco" checked id="blocoCeramica" value="Cerâmica" class="type-radio">
-                            <label for="blocoCeramica" class="type-lbl">Cerâmica</label>
-                        </div>
-                        <div class="select-block">
-                            <input type="radio" name="bloco" id="blocoIsopor" value="Isopor" class="type-radio">
-                            <label for="blocoIsopor" class="type-lbl">Isopor</label>
-                        </div>
-                    </div>
-                    <small hidden class="danger" id="blockError">Selecione um tipo de bloco</small>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-calc" id="btnCalc">Calcular</button>
+
+            <button type="submit" class="btn btn-calc btn-disabled" id="btnCalc">Calcular</button>
         </form>
     </main>
     <section class="modal-result" id="modalResult">
@@ -66,8 +57,10 @@
             </div>
             <div class="modal-item">
                 <p>Bloco:</p> 
-                <span class="item-value"><span id="unidadeBlocoModal"></span> unidades de blocos <span id="blocoModal">
-                    </span>
+                <span class="item-value"><span id="unidadeCeramicaBlocoModal"></span>un de Cerâmica
+                </span>
+                  | 
+                <span class="item-value"><span id="unidadeIsoporBlocoModal"></span>un de Isopor
                 </span>
             </div>
             <div class="modal-item">

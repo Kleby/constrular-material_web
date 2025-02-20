@@ -1,0 +1,33 @@
+
+.pvc-position__container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 2rem;
+    
+}
+.pvc-position__select{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pvc-image{
+    height: 100px;
+    box-shadow: 0px 0 8px 1px;
+}
+
+.horizontal{
+    transform: rotateZ(90deg);
+}
+.vertical{
+    transform: rotateZ(0deg);
+}
+
+.modal-item__column{
+    display: flex;
+    flex-direction: column;
+}
