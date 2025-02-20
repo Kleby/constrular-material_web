@@ -1,38 +1,43 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     const areaComodo = document.getElementById("areaComodo");
-const fichasPVC = [
-    {tamanho: "8m", area: 1.6, largura: 0.2},
-    {tamanho: "7m", area: 1.4, largura: 0.2},
-    {tamanho: "6m", area: 1.2, largura: 0.2},
-    {tamanho: "5m", area: 1,   largura: 0.2}
-];
+    const fichasPVC = [
+        {tamanho: "8m", area: 1.6, largura: 0.2},
+        {tamanho: "7m", area: 1.4, largura: 0.2},
+        {tamanho: "6m", area: 1.2, largura: 0.2},
+        {tamanho: "5m", area: 1,   largura: 0.2}
+    ];
+
+    const arremates = [
+        {"tamanho": 6, "label": "6m"},
+        {"tamanho": 3, "label": "3m"}
+    ];
 
     function ehInteiro(n){
         return n === parseInt(n);
     }
 
-    pvcPosition = document.getElementById("pvcPosition");
-    pvcImage = document.getElementById("pvcImage");
-    pvcPosition.addEventListener("change", function(){
-        switch(this.value){
-            case "vertical":
-                pvcImage.classList.remove("horizontal");
-                pvcImage.classList.add("vertical");
-                break;
+    // pvcPosition = document.getElementById("pvcPosition");
+    // pvcImage = document.getElementById("pvcImage");
+    // pvcPosition.addEventListener("change", function(){
+    //     switch(this.value){
+    //         case "vertical":
+    //             pvcImage.classList.remove("horizontal");
+    //             pvcImage.classList.add("vertical");
+    //             break;
             
-            default:
-                pvcImage.classList.remove("vertical");
-                pvcImage.classList.add("horizontal");
-                break;
-        }
-    });
+    //         default:
+    //             pvcImage.classList.remove("vertical");
+    //             pvcImage.classList.add("horizontal");
+    //             break;
+    //     }
+    // });
     
     calcForm.addEventListener("submit", function (e) {
         e.preventDefault();
         function replaceDot(value){
             value = value.replace(/,/gi, '.');
             return parseFloat(value);
-          }
+        }
         const value = areaComodo.value.toUpperCase().split("X");
         largura = replaceDot(value[0]);
         comprimento = replaceDot(value[1]);
@@ -47,6 +52,22 @@ const fichasPVC = [
                 });
             }
         }); 
+
+        const arrematesIdeis = [];
+
+        arremates.forEach(arremate => {            
+            arrematesIdeis.push({
+                "tamanho": arremate.label,
+                "quantidade": Math.ceil(perimentro/arremate.tamanho)
+            });
+        });
+        
+        const arrematesRecomendados = document.getElementById("arrematesRecomendados");
+        arrematesRecomendados.innerHTML = "";
+        arrematesIdeis.forEach(arremate => {
+            arrematesRecomendados.innerHTML += `<li>${arremate.tamanho}: ${arremate.quantidade} unidades</li>`;
+        });
+
         const fichasRecomendadas = document.getElementById("fichasRecomendadas");
         fichasRecomendadas.innerHTML = "";
         fichasIdeais.forEach(ficha => {
