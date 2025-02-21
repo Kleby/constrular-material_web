@@ -45,15 +45,27 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const perimentro = (largura + comprimento) * 2;
         let fichasIdeais = [];
         fichasPVC.forEach(ficha => {
-            if(ehInteiro(area/ficha.area)) { 
+            alert(area/ficha.area);
+            if(ehInteiro(area/ficha.area)) {
+                  
                 fichasIdeais.push({
                     "tamanho": ficha.tamanho,
                     "quantidade": area/ficha.area
                 });
             }
         }); 
+        if(fichasIdeais.length === 0){
+            fichasIdeais.push(
+                {
+                    "tamanho": 5,
+                    "quantidade": Math.ceil(area/5)
+                }); 
+        }
 
         const arrematesIdeis = [];
+
+        alert(area);
+        
 
         arremates.forEach(arremate => {            
             arrematesIdeis.push({

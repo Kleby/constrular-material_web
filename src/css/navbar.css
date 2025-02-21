@@ -10,7 +10,6 @@
   display: grid;
   grid-template-columns: repeat(4, 4fr);
   width: 100%;
-  grid-template-rows: 2fr 2fr;
   gap: 32px;
 }
 
