@@ -21,7 +21,7 @@
   justify-content: center;
   gap: 4px;
   position: relative;
-  margin: .5rem .75rem;
+  margin: .75rem .75rem;
 }
 
 .item-link::after,
