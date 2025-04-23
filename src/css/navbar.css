@@ -7,10 +7,11 @@
   color: white;
 }
 .nav-bar__content {
-  display: grid;
-  grid-template-columns: repeat(4, 4fr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  gap: 32px;
+  gap: 2rem;
 }
 
 .item-link {
@@ -20,7 +21,7 @@
   justify-content: center;
   gap: 4px;
   position: relative;
-  margin: 1rem 32px;
+  margin: .5rem .75rem;
 }
 
 .item-link::after,
@@ -31,8 +32,8 @@
 }
 
 .item-link::before {
-  width: 120px;
-  height: 120px;
+  width: 104px;
+  height: 72px;
   background: var(--secondary);
   border-radius: 16px;
   transition: 400ms;
@@ -43,7 +44,7 @@
 }
 .item__title {
   color: var(--tertiary);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   z-index: 2;
 }
 

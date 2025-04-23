@@ -1,38 +1,6 @@
 .navbar {
     height: 100%;
 }
-
-.link-homer {
-    color: var(--secondary);
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-weight: 800;
-    transition: 400ms;
-    position: relative;
-}
-
-.link-homer:hover {
-    color: var(--primary);
-}
-
-.link-homer::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 18px;
-    width: 0;
-    height: 4px;
-    transition: 400ms;
-    background-color: var(--secondary);
-}
-
-.link-homer:hover::after {
-    background-color: var(--primary);
-    width: 48px;
-}
-
 .calc__form {
     background-color: var(--secondary);
     padding: 1rem 2rem;

@@ -39,21 +39,31 @@ document.addEventListener("DOMContentLoaded", ()=>{
             return parseFloat(value);
         }
         const value = areaComodo.value.toUpperCase().split("X");
+
         largura = replaceDot(value[0]);
         comprimento = replaceDot(value[1]);
+
+        const tamanhoFichaCliente = document.getElementById("tamanhoFichaCliente").value;
+
         const area = largura * comprimento;
         const perimentro = (largura + comprimento) * 2;
         let fichasIdeais = [];
-        fichasPVC.forEach(ficha => {
-            alert(area/ficha.area);
-            if(ehInteiro(area/ficha.area)) {
-                  
-                fichasIdeais.push({
-                    "tamanho": ficha.tamanho,
-                    "quantidade": area/ficha.area
-                });
-            }
-        }); 
+        if(!tamanhoFichaCliente){
+            fichasPVC.forEach(ficha => {
+                if(ehInteiro(area/ficha.area)) {
+                    fichasIdeais.push({
+                        "tamanho": ficha.tamanho,
+                        "quantidade": area/ficha.area
+                    });
+                }
+            }); 
+        }
+        else{
+            fichasIdeais.push({
+                "tamanho": tamanhoFichaCliente,
+                "quantidade": Math.ceil(area/fichasPVC.find(ficha => ficha.tamanho === tamanhoFichaCliente+"m").area)
+            });
+        }
         if(fichasIdeais.length === 0){
             fichasIdeais.push(
                 {
@@ -63,10 +73,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }
 
         const arrematesIdeis = [];
-
-        alert(area);
-        
-
         arremates.forEach(arremate => {            
             arrematesIdeis.push({
                 "tamanho": arremate.label,
