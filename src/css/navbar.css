@@ -32,8 +32,8 @@
 }
 
 .item-link::before {
-  width: 104px;
-  height: 72px;
+  width: 144px;
+  height: 120px;
   background: var(--secondary);
   border-radius: 16px;
   transition: 400ms;
@@ -44,11 +44,11 @@
 }
 .item__title {
   color: var(--tertiary);
-  font-size: 0.8rem;
+  font-size: 1rem;
   z-index: 2;
 }
 
 .item-icon {
-  width: 56px;
+  width: 120px;
   z-index: 2;
 }

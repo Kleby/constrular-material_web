@@ -155,6 +155,7 @@
     font-size: 1.25rem;
     background-color: #0000d1;
     transition: 400ms ease-in;
+    width: 96%;
 }
 
 .btn-calc:hover{

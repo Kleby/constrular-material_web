@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const modalResult = document.getElementById("modalResult");
   const closeModal = document.getElementById("closeModal");
-  console.log('aqui modal');
   
   
   closeModal.addEventListener("click", () => {
@@ -39,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   btnCalc.removeEventListener("click", () => addClassActivated(modalResult));
 
-  function limparDados() {
+  function limparDados() {    
     areaComodo.value = "";
   }
 });

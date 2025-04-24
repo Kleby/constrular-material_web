@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../favicon-constrular.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+    <title>Cálculo para Lajes</title>
+
+    <link rel="stylesheet" href="../src/css/form.css" />
+    <link rel="stylesheet" href="../src/css/modal.css" />
+    <link rel="stylesheet" href="../src/css/reset.css" />
+    <link rel="stylesheet" href="../src/css/header.css" />
+    <link rel="stylesheet" href="../src/css/footer.css" />
+    <link rel="stylesheet" href="../src/css/main.css" />
+    <link rel="stylesheet" href="../src/css/madeira.css" />
+  </head>
+
+  <body>
+    <header class="header__container">
+      <nav class="navbar">
+        <div class="header__brand">
+          <img
+            src="../src/images/Constrular_brand.png"
+            alt="Logo da Constrular"
+            class="brand"
+          />
+        </div>
+        <a href="../index.html" class="link-homer">
+          <img
+            class="icon-back"
+            src="../src/images/arrow-left.png"
+            alt="Voltar a tela inicial"
+          />
+        </a>
+      </nav>
+    </header>
+    <main class="main__container">
+      <h1 class="main__title">Calculo de Madeira</h1>
+
+      <form action="#" method="POST" class="calc__form" id="calcForm">
+        <div class="form__content">
+          <div class="calc__content">
+            <div class="form-group">
+              <label for="areaComodo" class="form-lbl">*Área da casa</label>
+              <input
+                type="text"
+                id="areaComodo"
+                name="area-comodo"
+                placeholder="Largura x Comprimento"
+                class="form-in"
+              />
+              <small class="danger">*Campo Obrigatório</small>
+            </div>
+          </div>
+        </div>
+
+        <span class="line-h"></span>
+
+        <button type="submit" class="btn btn-calc" id="btnCalc">
+          <!-- <img class="icon icon-calculator" src="../src/images/calculator.png" alt="icone de uma Calculadora"> -->
+          Calcular
+        </button>
+      </form>
+    </main>
+    <section class="modal-result" id="modalResult">
+      <div class="modal__content">
+        <button class="btn btn-close" id="closeModal">X</button>
+        <div class="modal-item">
+                <label for="distanciaBitola" class="form-lbl">
+                    Distância entre bitolas em cm:
+                    <input 
+                        type="text" 
+                        id="distanciaBitola" 
+                        name="distancia-bitola" 
+                        class="form-in calc-in"
+                    >
+                </label>
+            </div>
+            <div class="modal-item select-options__container">
+                <h2 class="select-text">Pé, Ponta e Meio?</h2>
+                <div class="select-options" id="selectOptions">
+                    <div class="select">
+                        <input
+                        type="radio"
+                        id="Sim"
+                        name="ehPePontaMeio"
+                        class="form-in chbOptions"
+                        value="sim"
+                        />
+                        <label for="Sim" class="form-lbl chb-label">
+                            Sim
+                        </label>
+                    </div>
+                    <div class="select">
+                        <input
+                        type="radio"
+                        id="Nao"
+                        name="ehPePontaMeio"
+                        class="form-in chbOptions"
+                        value="nao"
+                        checked
+                        />
+                        <label for="Nao" class="form-lbl chb-label">
+                            Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        <div class="modal-item">
+          <label for="distanciaLinha" class="form-lbl">
+            Distância entre linhas:
+            <input
+              type="text"
+              id="distanciaLinha"
+              name="distancia-linha"
+              class="form-in calc-in"
+            />
+          </label>
+        </div>
+        <div class="modal-item">
+          <p class="modal-subtitle">Ripa:</p>
+          <span class="item-value">
+            <span id="quantidadeRipas"></span> 
+            Unidades
+          </span>
+        </div>
+        <div class="modal-item">
+          <p class="modal-subtitle">Caibro:</p>
+          <span class="item-value">
+            <span id="quantidadeCaibro"></span> 
+            Unidades
+          </span>
+        </div>
+        <div class="modal-item">
+          <p class="modal-subtitle">Linha:</p>
+          <span class="item-value">
+            <span id="quantidadeLinha" class="item-value"> </span>
+                Unidades
+            </span
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer__container">
+      <p class="footer__description"><span id="anoAtual"></span> &copy;</p>
+      <p class="footer__title">
+        Constrular <span class="footer-brand">Home Center</span>
+      </p>
+    </footer>
+    <script defer src="../src/js/calcularMadeira.js"></script>
+    <script defer src="../src/js/validacao.js"></script>
+    <script defer src="../src/js/enabledDisabled.js"></script>
+  </body>
+</html>
