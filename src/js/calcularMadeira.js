@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let larguraComodo = 0;
     let comprimentoComodo = 0;
 
+    function replaceDot(value){
+        const value = value.replace(/,/gi, '.');
+        return parseFloat(value);
+    }
+
     const pegarLarguraComprimento = () =>{
         const areaComodoArr = document.getElementById('areaComodo').value.toLowerCase().split('x');
         comprimentoComodo = areaComodoArr.reduce((acc, curr) =>{
@@ -15,8 +20,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
             return acc > curr ? acc : curr;
         },0);
         larguraComodo = areaComodoArr.reduce((acc, curr) =>{
-            acc = parseInt(acc)
-            curr = parseInt(curr); 
+            acc = replaceDot(acc)
+            curr = replaceDot(curr);
             return acc < curr ? acc : curr;
         },comprimentoComodo);
         

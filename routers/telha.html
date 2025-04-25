@@ -43,10 +43,25 @@
                         <small class="danger">*Campo Obrigatório</small>
                     </div>
             </div>
-            <div class="form-group">
-                <div class="form-group">
-                    <label for="quantidadePorCaixa" class="form-lbl">Quantidade cerâmicas em caixa </label>
-                    <input type="text" name="quantidade-caixa" id="quantidadePorCaixa" placeholder="0" class="form-in">
+            <div class="select-options__container" id="telhaTipo">
+                <h2 class="block__title">Selecione o tipo de Telha</h2>
+                <div class="select-options">
+                    <div class="form-group select-options">
+                        <input type="radio" name="telha-selecionada" id="telhaSegunda" class="form-in chbOptions" checked>
+                        <label for="telhaSegunda" class="form-lbl chb-label">Telha 2ª</label>
+                    </div>
+                    <div class="form-group select-options">
+                        <input type="radio" name="telha-selecionada" id="telhaRussaPrimeira" class="form-in chbOptions">
+                        <label for="telhaRussaPrimeira" class="form-lbl chb-label">Telha Russa 1ª</label>
+                    </div>
+                    <div class="form-group select-options">
+                        <input type="radio" name="telha-selecionada" id="telhaKitambar" class="form-in chbOptions">
+                        <label for="telhaKitambar" class="form-lbl chb-label">Telha Kitambar</label>
+                    </div>
+                    <div class="form-group select-options">
+                        <input type="radio" name="telha-selecionada" id="telhaBrasilit" class="form-in chbOptions">
+                        <label for="telhaBrasilit" class="form-lbl chb-label">Telha Brasilit</label>
+                    </div>
                 </div>
             </div>
             <button type="submit" class="btn btn-calc" id="btnCalc">Calcular</button>
@@ -75,7 +90,7 @@
         </p>
     </footer>
 
-    <script defer src="../src/js/calcularCeramica.js"></script>
+    <script defer src="../src/js/calcularTelha.js"></script>
     <script defer src="../src/js/validacao.js"></script>
     <script defer src="../src/js/enabledDisabled.js"> </script>
     

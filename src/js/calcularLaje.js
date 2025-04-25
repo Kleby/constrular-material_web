@@ -1,7 +1,7 @@
+let area = 0;
+let largura = 0;
+let comprimento = 0;
 document.addEventListener("DOMContentLoaded", () => {
-  let area = 0;
-  let largura = 0;
-  let comprimento = 0;
 
   const areaComodo = document.getElementById("areaComodo");
   
@@ -27,9 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const malha = area / 6;
     const latasBrita = area / 1.25;
-    const cimento = Math.ceil(area / 2.6);
+    const cimento = Math.ceil(area / 2.5);
     
-    nevruraModal.innerText = nevrura.toFixed(0);
+    nevruraModal.innerText = Math.ceil(nevrura);
     unidadeCeramicaBlocoModal.innerText = Math.ceil(area * 11.5);
     unidadeIsoporBlocoModal.innerText = Math.ceil(area * 2);
     malhaModal.innerText = Math.ceil(malha);
