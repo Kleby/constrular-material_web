@@ -137,9 +137,6 @@
     color: var(--primary);
 }
 
-.list-group.ficha-ideal::before{
-    background-color: var(--primary-010);
-}
 
 #arrematesRecomendados{
     list-style: none;

@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const calcularPVC = () => {
         let area_comodo = comprimento * largura;
         let menor_desperdicio = Infinity;
+        let maior_quantidade = Infinity;
         let ficha_ideal = null;
         let listaFichas = [];
 
@@ -59,7 +60,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 desperdicio: desperdicio.toFixed(2)
             });
 
-            if (desperdicio < menor_desperdicio) {
+            console.log(
+                `Ficha: ${ficha.tamanho}, 
+                Quantidade: ${quantidade_fichas}, 
+                Desperdício: ${desperdicio.toFixed(2)}, 
+                Emendas: ${quantidade_emenda},
+                menor Desperdício: ${menor_desperdicio.toFixed(2)}
+                `);
+            
+
+            if (desperdicio < menor_desperdicio && quantidade_fichas < maior_quantidade) {
+                maior_quantidade = quantidade_fichas;
                 menor_desperdicio = desperdicio;
                 ficha_ideal = ficha;
             }
