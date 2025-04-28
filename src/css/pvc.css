@@ -2,32 +2,165 @@
 .pvc-position__container{
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    gap: 2rem;
     
 }
-.pvc-position__select{
+.pvc-position__content{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
+    gap: 2rem;
+    /* margin: 2rem 0; */
+}
+
+.form-group{
+    gap: .25rem;
+    margin: .5rem;
+}
+
+.pvc-position__radio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pvc-image__content{
+    width: 94%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .pvc-image{
-    height: 100px;
     box-shadow: 0px 0 8px 1px;
+    transform: rotate(0deg);
+    transition: 400ms ease-in-out ;
+    height: 40px;
+    width: 92%;
+    position: absolute;
 }
 
-.horizontal{
-    transform: rotateZ(90deg);
+.block__title{
+    margin-bottom: 1.5rem;
 }
-.vertical{
-    transform: rotateZ(0deg);
+
+.modal__content{
+    padding: 1rem;
+    /* width: 100%; */
+    /* height: 100%; */
 }
 
 .modal-item__column{
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+
+.btn-calc{
+    margin: 1rem 0;
+}
+
+.area-desenho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 8rem;
+    background-color: #7299d4;
+    position: relative;
+}
+
+.span-tamanho{
+    position: absolute;
+    color: var(--tertiary);
+}
+
+.text-largura{
+    top: -1.5rem;
+}
+.text-comprimento{
+    left: 106px;
+}
+
+.tabela__ficha, 
+.tabela__header-item, 
+.list-item {
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 4px;
+    border-width: 2px;
+  }
+
+.tabela__ficha{
+    width: 100%;
+}
+
+.tabela__header-item,
+.list-item{
+    text-align: center;
+    font-weight: bold;
+}
+
+.tabela__header-item{
+    background-color: var(--secondary);
+    color: var(--tertiary);
+}
+
+.table__title{
+    color: var(--tertiary);
+}
+
+.ficha-recomendada__container{
+    background-color: var(--tertiary-001);
+    width: auto;
+    text-align: center;
+    width: 5.5rem;
+    padding: 0.75rem;
+    margin-top: .5rem;
+    margin-left: .5rem;
+    box-shadow: 0rem 0 0.25rem 0.0625rem inset,
+                0rem 0 0.5rem 0.0625rem;
+}
+
+.list-group{
+    background-color: var(--tertiary-001);
+}
+
+.list-group.ficha-ideal{
+    background-color: var(--tertiary-100);
+    color: var(--primary);
+}
+
+.list-group.ficha-ideal::before{
+    background-color: var(--primary-010);
+}
+
+#arrematesRecomendados{
+    list-style: none;
+}
+
+li{
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+
+li::before{
+    position: absolute;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--secondary-010);
+    border-radius: 50%;
+    content: '';
+    display: block;
 }

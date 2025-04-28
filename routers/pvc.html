@@ -32,26 +32,10 @@
 
     <main class="main__container">
         <h1 class="main__title">
-            Cáculo para forro PVC
+            Cálculo para forro PVC
         </h1>
 
-        <form action="#" method="POST" class="calc__form" id="calcForm">
-
-            <!-- <div class="pvc-position__container">
-                <div class="pvc-position__select">
-
-                    <label for="pvcPosition" class="form-lbl">Posição do PVC</label>
-                    <select id="pvcPosition" name="posicao-pvc" class="form-select">
-                        <option value="vertical">Vertical</option>
-                        <option value="horizontal">Horizontal</option>
-                    </select>
-                    <small class="danger">*Campo Obrigatório</small>
-                </div>
-                <div class="pvc-image__content">
-                    <img src="../src/images/pvc.png" alt="Imagem do PVC horizontal" id="pvcImage" class="pvc-image">
-
-                </div>
-            </div> -->
+        <form action="#" method="POST" class="calc__form" id="calcForm" style="padding: 2rem;">
             <div class="calc__content">
                 <div class="area-PVC__Conteudo">
                     <div class="form-group">
@@ -64,7 +48,7 @@
             <div class="form-group">
                 <h2 class="block__title">Cliente Definiu o tamanho da ficha?</h2>
                 <div class="form-group">
-                    <label for="tamanhoFicha" class="form-lbl">Tamaho da ficha</label>
+                    <label for="tamanhoFichaCliente" class="form-lbl">Tamaho da ficha</label>
                     <input type="text" name="tamanho-ficha" id="tamanhoFichaCliente" placeholder="tamanho da ficha" class="form-in">
                 </div>
             </div>
@@ -73,18 +57,59 @@
     </main>
     <section class="modal-result" id="modalResult">
         <div class="modal__content">
+            <div class="pvc-position__container" id="pvcPosition">
+                <h2 class="block__title">Posição do PVC</h2>
+                <div class="pvc-position__content">
+                    <div class="pvc-position__radio select-options">
+                        <div class="form-group select">
+                            <input type="radio" id="pvcPositionHorizontal" class="form-in chbOptions" name="posicao-pvc" value="0" checked>
+                            <label for="pvcPositionHorizontal" class="form-lbl chb-label">Horizontal</label>
+                        </div>
+                        <div class="form-group select">
+                            <input type="radio"  id="pvcPositionVertical" class="form-in chbOptions" name="posicao-pvc" value="90">
+                            <label for="pvcPositionVertical" class="form-lbl chb-label">Vertical</label>
+                        </div>
+                    </div>
+                    <div class="area-desenho">
+                        <span class="span-tamanho text-comprimento" id="spanComprimento"></span>
+                        <div class="pvc-image__content">
+                            <img src="../src/images/placa_pvc.png" alt="Imagem do PVC horizontal" id="pvcImage" class="pvc-image">
+                        </div>
+                        <span class="span-tamanho text-largura" id="spanLargura"></span>
+                    </div>
+                </div>
+            </div>
 
             <button class="btn btn-close" id="closeModal">X</button>
             <div class="modal-item">
                 <div class="modal-item__column">
-                    <h3>Fichas Recomendadas</h3>
-                    <span class="item-value" id="fichasRecomendadas"></span>
+                    <table class="tabela__ficha">
+                        <caption >
+                            <h3 class="table__title">Lista de Fichas</h3>
+    
+                        </caption>
+                        <thead class="tabela__header">
+                            <tr class="tabela__header-row">
+                                <th class="tabela__header-item" >Fichas m²</th>
+                                <th class="tabela__header-item">Quantidade com inteiras</th>
+                                <th class="tabela__header-item">Quantidade com Emendas</th>
+                                <th class="tabela__header-item">Desperdício por ficha</th>
+                            </tr>
+                        </thead>
+                        <tbody  class="tabela__body" id="listaFichas">
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="modal-item">
                 <div class="modal-item__column">
+                    <h3>Ficha Recomendada</h3>
+                    <div class="item-value ficha-recomendada__container" id="fichaRecomendada"></div>
+                </div>
+            <div class="modal-item">
+                <div class="modal-item__column">
                     <h3>Arremates Recomendadas</h3>
-                    <span class="item-value" id="arrematesRecomendados"></span>
+                    <ul class="item-value" id="arrematesRecomendados"></ul>
                 </div>
             </div>
 

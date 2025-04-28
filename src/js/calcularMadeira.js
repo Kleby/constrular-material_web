@@ -7,23 +7,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let larguraComodo = 0;
     let comprimentoComodo = 0;
 
-    function replaceDot(value){
-        const value = value.replace(/,/gi, '.');
+    function replaceDot(value){        
+        value = value.replace(/,/gi, '.');
+        console.log(value);
         return parseFloat(value);
     }
 
     const pegarLarguraComprimento = () =>{
         const areaComodoArr = document.getElementById('areaComodo').value.toLowerCase().split('x');
-        comprimentoComodo = areaComodoArr.reduce((acc, curr) =>{
-            acc = parseInt(acc)
-            curr = parseInt(curr);
-            return acc > curr ? acc : curr;
-        },0);
-        larguraComodo = areaComodoArr.reduce((acc, curr) =>{
-            acc = replaceDot(acc)
-            curr = replaceDot(curr);
-            return acc < curr ? acc : curr;
-        },comprimentoComodo);
+        if(areaComodoArr[0] > areaComodoArr[1]){
+            comprimentoComodo = replaceDot(areaComodoArr[0]);
+            larguraComodo = replaceDot(areaComodoArr[1]);
+        }
+        else
+        {
+            comprimentoComodo = replaceDot(areaComodoArr[1]);
+            larguraComodo = replaceDot(areaComodoArr[0]);
+        }
         
     }
     calcForm.addEventListener('submit', (e)=>{
