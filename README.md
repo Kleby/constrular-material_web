@@ -63,9 +63,9 @@ Desenvolvido por **João Kleby** — Desenvolvedor focado em criar soluções pr
 
 📍 Conecte-se comigo:
 
-🔵 **[LinkedIn:linkedin.com/in/jkleby](linkedin.com/in/jkleby)**
+🔵 **LinkedIn: [https://linkedin.com/in/jkleby](https://linkedin.com/in/jkleby)**
 
-🐙 **[GitHub:github.com/Kleby](github.com/Kleby)**
+🐙 **GitHub: [https://github.com/Kleby](https://github.com/Kleby)**
 
 ---
 © 2024 **Constrular Home Center** - Todos os direitos reservados.
