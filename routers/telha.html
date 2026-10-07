@@ -1,98 +1,175 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cálculo para Telha</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cálculo para Telha</title>
 
-    <link rel="shortcut icon" href="../favicon-constrular.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../favicon-constrular.ico"
+            type="image/x-icon">
 
-    <link rel="stylesheet" href="../src/css/form.css">
-    <link rel="stylesheet" href="../src/css/modal.css">
-    <link rel="stylesheet" href="../src/css/reset.css">
-    <link rel="stylesheet" href="../src/css/header.css">
-    <link rel="stylesheet" href="../src/css/footer.css">
-    <link rel="stylesheet" href="../src/css/main.css">
-</head>
-</head>
-<body>
-    <header class="header__container">
-        <nav class="navbar">
-            <a href="../index.html">
+        <link rel="stylesheet" href="../src/css/form.css">
+        <link rel="stylesheet" href="../src/css/modal.css">
+        <link rel="stylesheet" href="../src/css/reset.css">
+        <link rel="stylesheet" href="../src/css/header.css">
+        <link rel="stylesheet" href="../src/css/footer.css">
+        <link rel="stylesheet" href="../src/css/main.css">
 
-                <div class="header__brand">
-                    <img src="../src/images/Constrular_brand.png" alt="Logo da Constrular" class="brand">
+        <style>
+        .form-lbl, .chbOptions, .form-in, .chb-span{
+            transition: all 300ms ease-in-out;
+        }
+        .form-lbl:hover, .chbOptions:hover, .form-lbl:hover > .chb-span{
+            cursor: pointer;
+            color: var(--primary-001);
+        }
+        .form-in:hover{
+            background-color: var(--primary-001);
+        }
+
+        .item{
+            flex:1;
+            text-align: left;
+                font-weight: 600;
+    color: var(--secondary-001);
+        }
+
+        .resultado-calculo{
+            width: 100%;
+            background-color: var(--tertiary);
+            padding: 18px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .modal-item__column{
+            width: 100%;
+            text-align: center;
+        }
+
+        .resultado-item{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width:100%;
+        }
+        .resultado-label{
+            width: 100%; text-align: left; flex: 2;
+        }
+
+        .modal-title{
+            margin-bottom: 22px;
+            color: var(--tertiary);
+        }
+    </style>
+
+    </head>
+    <body>
+        <header class="header__container">
+            <nav class="navbar">
+                <a href="../index.html">
+
+                    <div class="header__brand">
+                        <img src="../src/images/Constrular_brand.png"
+                            alt="Logo da Constrular" class="brand">
+                    </div>
+                </a>
+                <a href="../index.html" class="link-homer">
+                    <img class="icon-back" src="../src/images/arrow-left.png"
+                        alt="Voltar a tela inicial">
+                </a>
+            </nav>
+        </header>
+
+        <main class="main__container">
+            <h1 class="main__title">
+                Cálculo para Telha
+            </h1>
+
+            <form action="#" method="POST" class="calc__form" id="calcForm">
+                <div class="select-options__container" id="telhaTipo">
+                    <h2 class="block__title">Selecione o tipo de Telha</h2>
+                    <div class="select-options" id="select-options">
+                        <div class="form-group select-options">
+                            <label for="telhaSegunda"
+                                class="form-lbl chb-label">
+                                <input type="radio" name="telha-selecionada"
+                                    id="telhaSegunda" class="form-in chbOptions"
+                                    value="telhaSegunda" checked>
+                                <span class="chb-span">Telha 2ª</span>
+                            </label>
+                        </div>
+                        <div class="form-group select-options">
+                            <label for="telhaRussaPrimeira"
+                                class="form-lbl chb-label">
+                                <input type="radio" name="telha-selecionada"
+                                    id="telhaRussaPrimeira"
+                                    value="telhaRussaPrimeira"
+                                    class="form-in chbOptions">
+                                <span class="chb-span">Telha Russa 1ª</span>
+                            </label>
+                        </div>
+                        <!-- <div class="form-group select-options">
+                        <label for="telhaKitambar" class="form-lbl chb-label">
+                            <span class="chb-span">Telha Kitambar</span>
+                            <input type="radio" name="telha-selecionada" id="telhaKitambar" class="form-in chbOptions">
+                        </label>
+                    </div> -->
+                        <div class="form-group select-options">
+                            <label for="telhaBrasilit"
+                                class="form-lbl chb-label">
+                                <input type="radio" name="telha-selecionada"
+                                    id="telhaBrasilit" value="telhaBrasilit"
+                                    class="form-in chbOptions">
+                                <span class="chb-span">Telha Brasilit</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </a>
-            <a href="../index.html" class="link-homer">
-                <img class="icon-back" src="../src/images/arrow-left.png" alt="Voltar a tela inicial">
-            </a>
-        </nav>
-    </header>
-
-    <main class="main__container">
-        <h1 class="main__title">
-            Cáculo para Telha
-        </h1>
-
-        <form action="#" method="POST" class="calc__form" id="calcForm">
-            <div class="calc__content">
+                <div class="calc__content">
                     <div class="form-group">
-                        <label for="areaComodo" class="form-lbl">*Largura X Comprimento</label>
-                        <input type="text" id="areaComodo" name="area-Comodo" placeholder="LxC" class="form-in">
+                        <label for="areaComodo" class="form-lbl">*Largura X
+                            Comprimento</label>
+                        <input type="text" id="areaComodo" name="area-Comodo"
+                            placeholder="LxC" class="form-in">
                         <small class="danger">*Campo Obrigatório</small>
                     </div>
-            </div>
-            <div class="select-options__container" id="telhaTipo">
-                <h2 class="block__title">Selecione o tipo de Telha</h2>
-                <div class="select-options">
-                    <div class="form-group select-options">
-                        <input type="radio" name="telha-selecionada" id="telhaSegunda" class="form-in chbOptions" checked>
-                        <label for="telhaSegunda" class="form-lbl chb-label">Telha 2ª</label>
-                    </div>
-                    <div class="form-group select-options">
-                        <input type="radio" name="telha-selecionada" id="telhaRussaPrimeira" class="form-in chbOptions">
-                        <label for="telhaRussaPrimeira" class="form-lbl chb-label">Telha Russa 1ª</label>
-                    </div>
-                    <div class="form-group select-options">
-                        <input type="radio" name="telha-selecionada" id="telhaKitambar" class="form-in chbOptions">
-                        <label for="telhaKitambar" class="form-lbl chb-label">Telha Kitambar</label>
-                    </div>
-                    <div class="form-group select-options">
-                        <input type="radio" name="telha-selecionada" id="telhaBrasilit" class="form-in chbOptions">
-                        <label for="telhaBrasilit" class="form-lbl chb-label">Telha Brasilit</label>
+                </div>
+                <button type="submit" class="btn btn-calc"
+                    id="btnCalc">Calcular</button>
+            </form>
+        </main>
+        <section class="modal-result" id="modalResult">
+            <div class="modal__content">
+                <button class="btn btn-close" id="closeModal">X</button>
+                <div class="modal-item">
+                    <div class="modal-item__column">
+                        <h3 class="modal-title">Quantidade de Telhas</h3>
+                        <div class="resultado-calculo">
+                                    <div class="resultado-item"><span class="resultado-label">Quantidade Calculada:</span><span id="qtdTelhas" class="item"></span></div>
+                                    <div class="resultado-item"><span class="resultado-label">Quantidade Recomendada:</span> <span id="qtdTelhasRecomendadas" class="item"></span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-calc" id="btnCalc">Calcular</button>
-        </form>
-    </main>
-    <section class="modal-result" id="modalResult">
-        <div class="modal__content">
+        </section>
 
-            <button class="btn btn-close" id="closeModal">X</button>
-            <div class="modal-item">
-                <div class="modal-item__column">
-                    <h3>Quantidade de cerâmicas recomendadas</h3>
-                    <span class="item-value" id="qtdCeramicasAUsar"></span>
-                </div>
-            </div>
-        </div>
-    </section>
+        <footer class="footer__container">
+            <p class="footer__description">
+                <span id="anoAtual"></span> &copy;
+            </p>
+            <p class="footer__title">
+                Constrular <span class="footer-brand">Home Center</span>
+            </p>
+        </footer>
 
+        <script defer src="../src/js/calcularTelha.js"></script>
+        <script defer src="../src/js/validacao.js"></script>
+        <script defer src="../src/js/enabledDisabled.js"> </script>
 
-    <footer class="footer__container">
-        <p class="footer__description">
-            <span id="anoAtual"></span> &copy;
-        </p>
-        <p class="footer__title">
-            Constrular  <span class="footer-brand">Home Center</span>
-        </p>
-    </footer>
-
-    <script defer src="../src/js/calcularTelha.js"></script>
-    <script defer src="../src/js/validacao.js"></script>
-    <script defer src="../src/js/enabledDisabled.js"> </script>
-    
-</body>
+    </body>
 </html>
